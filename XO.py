@@ -39,3 +39,13 @@ def win_check(board, mark):
         return True
     else:
         return False
+
+def choose_first():
+    pass
+
+def space_check(board, position):
+    if board[position - 1] == "":
+        return True
+    else:
+        print("Choose another position")
+        return False
