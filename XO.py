@@ -16,3 +16,11 @@ def player_input():
 def place_marker(boardlist, player, position):
     boardlist[position - 1] = player
     return boardlist
+
+def display_board(boardlist):
+    board = f"""  
+    {boardlist[6]} | {boardlist[7]} | {boardlist[8]}
+    {boardlist[3]} | {boardlist[4]} | {boardlist[5]}
+    {boardlist[0]} | {boardlist[1]} | {boardlist[2]}
+            """
+    print(board)
