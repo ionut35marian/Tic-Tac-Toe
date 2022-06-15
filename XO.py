@@ -49,3 +49,10 @@ def space_check(board, position):
     else:
         print("Choose another position")
         return False
+
+def full_board_check(board):
+    if "" not in board:
+        print("The games is TIED")
+        return True
+    else:
+        return False
