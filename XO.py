@@ -24,3 +24,18 @@ def display_board(boardlist):
     {boardlist[0]} | {boardlist[1]} | {boardlist[2]}
             """
     print(board)
+
+def win_check(board, mark):
+    if (
+        board[0] == board[1] == board[2] == mark
+        or board[3] == board[4] == board[5] == mark
+        or board[6] == board[7] == board[8] == mark
+        or board[0] == board[3] == board[6] == mark
+        or board[1] == board[4] == board[7] == mark
+        or board[2] == board[5] == board[8] == mark
+        or board[0] == board[4] == board[8] == mark
+        or board[2] == board[4] == board[6] == mark
+    ):
+        return True
+    else:
+        return False
