@@ -71,3 +71,22 @@ def player_choice(boardlist, player):
         else:
             player_choice(boardlist, player)
     return False
+
+def replay():
+    ans = input("Do you want to play another game? y/n: ")
+    if ans in ["y", "Y"]:
+        run_game(["", "", "", "", "", "", "", "", ""])
+    else:
+        print("Bye")
+
+def run_game(boardlist):
+    player1, player2 = player_input()
+    player1_turn = True
+    ended = False
+    while not ended:
+        if player1_turn:
+            ended = player_choice(boardlist, player1)
+        else:
+            ended = player_choice(boardlist, player2)
+        player1_turn = not player1_turn
+    replay()
