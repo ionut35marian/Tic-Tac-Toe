@@ -56,3 +56,18 @@ def full_board_check(board):
         return True
     else:
         return False
+
+def player_choice(boardlist, player):
+    p_choice = int(input("What position do you want to mark? "))
+    if p_choice in range(1, 10):
+        if space_check(boardlist, p_choice):
+            boardlist = place_marker(boardlist, player, p_choice)
+            if win_check(boardlist, player):
+                print(f"{player} is the winner")
+                return True
+            elif full_board_check(boardlist):
+                return True
+            display_board(boardlist)
+        else:
+            player_choice(boardlist, player)
+    return False
