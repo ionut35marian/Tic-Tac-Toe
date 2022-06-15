@@ -12,3 +12,7 @@ def player_input():
     print(f"player 1 is {player1}")
     print(f"player 2 is {player2}")
     return player1, player2
+
+def place_marker(boardlist, player, position):
+    boardlist[position - 1] = player
+    return boardlist
